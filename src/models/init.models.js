@@ -5,10 +5,6 @@ const Categories = require('./categories.models');
 const TodosCategories = require('./todos-categories.models');
 
 const initModels = ()=>{
-  // Users;
-  // Todos;
-  // Categories;
-  // TodosCategories;
   //relaciones
   Todos.belongsTo(Users, {as: 'author', foreignKey: 'user_id'}); //segundo parametro es optativo
   Users.hasMany(Todos, {as: 'tasks', foreignKey: 'user_id'});
@@ -18,6 +14,10 @@ const initModels = ()=>{
 
   TodosCategories.belongsTo(Categories, {as: 'category', foreignKey: 'category_id'});
   Categories.hasMany(TodosCategories, {as: 'tasks', foreignKey: 'category_id'});
+
+  //trabajo en clases
+  Categories.belongsTo(Users, {as: 'author', foreignKey: 'user_id'});
+  Users.hasMany(Categories, {as: 'category', foreignKey: 'user_id'});
 }
 
 module.exports = initModels;

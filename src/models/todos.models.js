@@ -25,10 +25,10 @@ const Todos = db.define('todos', {
     type: DataTypes.INTEGER,
     allowNull: false,
     field: "user_id",
-    references: { //indica que es la llave foranea, modelo y id
-      model: Users, 
-      key: "id"
-    }
+    // references: { //indica que es la llave foranea, modelo y id
+    //   model: Users, 
+    //   key: "id"
+    // }
   }
 });
 
