@@ -10,7 +10,7 @@ const db = new Sequelize({
   port: process.env.DB_PORT,
   password: process.env.DB_PASSWORD,
   dialect: "postgres", //la base de datos que estamos usando (puede ser mysql, postgres, etc)
-  logging: false//silencia información que logea el sequelize
+  logging: false,//silencia información que logea el sequelize
   dialectOptions: { ssl: { require: true, rejectUnauthorized: false}}
 });
 
