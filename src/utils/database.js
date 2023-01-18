@@ -11,6 +11,7 @@ const db = new Sequelize({
   password: process.env.DB_PASSWORD,
   dialect: "postgres", //la base de datos que estamos usando (puede ser mysql, postgres, etc)
   logging: false//silencia información que logea el sequelize
+  dialectOptions: { ssl: { require: true, rejectUnauthorized: false}}
 });
 
 
